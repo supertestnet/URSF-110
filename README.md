@@ -55,7 +55,7 @@ To prevent a big chunk of users from forking off the network (thus potentially r
 # How does this software help fight BIP110?
 I don't want miners to support BIP110 out of fear of losing users and thus potentially freeze the funds of innocent miniscript users. Right now, it seems like they only lose users if they "oppose" BIP110. So they may start signaling support for BIP110 just to avoid losing users. I want them to have an "alternative" fear. Specifically, if enough people run a "User Rejected Soft Fork" against BIP110, then miners have to pick: do they fork off the BIP110 users and keep the URSF-110 users, or do they fork off the URSF-110 users and keep the BIP110 users? I want more people to run URSF software than run BIP110, including more "economically significant" users. That way miners have an economic incentive to choose to keep the URSF-110 people and let the BIP110 people leave.
 
-To be clear, I say I want more people to run URSF software. I do not want people to run *this specific* software (the code in this repository) except if you are in one of the exceptional categories listed above. But I do hope someone smarter than me makes a "serious" URSF software against BIP110 and then I hope lots of people run that.
+To be clear, I say I want more people to run URSF software. I do not want people to run *this specific* software (the code in this repository) except if you are in one of the exceptional categories listed above. But I do hope someone smarter than me makes more "serious" URSF software against BIP110, and then I hope lots of people run that.
 
 # Installation
 First ensure you have the two programs `nodejs` and `git`
