@@ -189,6 +189,7 @@ var makeBlock = async ( addy, current_blockheight, pro_bip110, timestamp, rpc_ho
     if ( network === "regtest" ) {
         var start_blockheight = blockheight + 1;
         var last_used_timestamp = Math.floor( Date.now() / 1000 );
+        console.log( `` );
         console.log( `============================` );
         console.log( `` );
         console.log( `Current blockheight: ${blockheight}` );
