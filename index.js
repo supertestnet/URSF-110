@@ -101,12 +101,13 @@ var makeBlock = async ( addy, current_blockheight, pro_bip110, timestamp, rpc_ho
         var blockheight_as_hex = ( prev_height + 1 ).toString( 16 );
         if ( blockheight_as_hex.length % 2 ) blockheight_as_hex = "0" + blockheight_as_hex;
         blockheight_as_hex = reverseHexString( blockheight_as_hex );
-        if ( blockheight_as_hex.length < 3 ) blockheight_as_hex = blockheight_as_hex + "00";
+        if ( prev_height + 1 > 127 && blockheight_as_hex.length < 3 ) blockheight_as_hex = blockheight_as_hex + "00";
         var bh_prefix = ( blockheight_as_hex.length / 2 ).toString( 16 );
         if ( bh_prefix.length % 2 ) bh_prefix = "0" + bh_prefix;
         blockheight_as_hex = bh_prefix + blockheight_as_hex;
     } else {
         var blockheight_as_hex = tapscript.Script.fmt.toAsm( tapscript.Script.encode( [ prev_height + 1 ] ) )[ 0 ];
+        if ( blockheight_as_hex.length < 3 ) blockheight_as_hex = blockheight_as_hex + "00";
     }
 
     //mine based on difficulty
