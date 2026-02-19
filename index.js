@@ -129,7 +129,7 @@ var makeBlock = async ( addy, current_blockheight, pro_bip110, timestamp, rpc_ho
         var timestamp_hex = timestamp.toString( 16 );
         if ( timestamp_hex.length % 2 ) timestamp_hex = "0" + timestamp_hex;
         var block_info = {
-            version: pro_bip110 ? "03000010" : "30000000",
+            version: pro_bip110 ? "30000008" : "30000000",
             prevblock,
             merkle_root: tapscript.Tx.util.getTxid( coinbase ),
             timestamp_hex,
@@ -269,7 +269,7 @@ var makeBlock = async ( addy, current_blockheight, pro_bip110, timestamp, rpc_ho
             var block_header_version_binary = [];
             block_header_version_hexes.forEach( hex => block_header_version_binary.push( hexToBinary( hex ) ) );
             var fourth_bits = [];
-            block_header_version_binary.forEach( bin => fourth_bits.push( Number( bin.split( "" ).reverse()[ 4 ] ) ) );
+            block_header_version_binary.forEach( bin => fourth_bits.push( Number( bin.split( "" ).reverse()[ 3 ] ) ) );
 
             //check how many blocks signaled for BIP110
             var counter = 0;
@@ -358,7 +358,7 @@ var makeBlock = async ( addy, current_blockheight, pro_bip110, timestamp, rpc_ho
             var block_header_version_binary = [];
             block_header_version_hexes.forEach( hex => block_header_version_binary.push( hexToBinary( hex ) ) );
             var fourth_bits = [];
-            block_header_version_binary.forEach( bin => fourth_bits.push( Number( bin.split( "" ).reverse()[ 4 ] ) ) );
+            block_header_version_binary.forEach( bin => fourth_bits.push( Number( bin.split( "" ).reverse()[ 3 ] ) ) );
 
             //check how many blocks signaled for BIP110
             var counter = 0;
