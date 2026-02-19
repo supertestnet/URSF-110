@@ -94,6 +94,8 @@ rpcport=8332
 
 Run bitcoin core on either regtest or mainnet: `bitcoind` or `bitcoind -regtest --fallbackfee=0.0001`
 
+If running on mainnet, wait for bitcoin core to sync the blockchain, if you haven't already done that
+
 Run the URSF-110 app: `node index.js`
 
 Then follow the prompts.
