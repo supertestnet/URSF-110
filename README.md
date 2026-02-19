@@ -11,7 +11,7 @@ A POC app for using bitcoind's "invalidateblock" command to reject BIP110
 This is one of my proof-of-concept apps, and I hope it contributes to the ongoing spam debate in bitcoin. Some people on one side of that debate -- the "anti-spam" side, which I usually align with -- created [software](https://bip110.org/) for enforcing a "User Activated Soft Fork" (or UASF) that modifies bitcoin's consensus rules to prohibit certain forms of spam. They plan to begin enforcing their soft fork around September 2026, and in the meantime, bitcoin miners have a chance to "prepare" or even activate the soft fork in advance if they are ready. I don't like BIP110 and decided to write a "User Rejected Soft Fork" (or URSF) to fight it.
 
 # What is a User Rejected Soft Fork?
-It is a soft fork written in response to another, to fight against a bad idea. If soft fork A enforces rule X, a URSF against soft fork A enforces rule "not X." In this case, BIP110 requires miners to put certain things in their blocks (more details below), so this URSF requires them "not" to put those things in their blocks.
+It is a soft fork written in response to another, to fight against a bad idea. If soft fork A enforces rule X, a URSF against soft fork A enforces rule "not X." In this case, BIP110 requires miners to put a certain "signal" in their blocks (more details below), so this URSF requires them "not" to put that signal in their blocks.
 
 # What does this software do, specifically?
 It has two modes: regtest and mainnet. On regtest mode, it does the following things:
