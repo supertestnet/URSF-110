@@ -76,12 +76,12 @@ Edit your bitcoin config file and make it look like this, or similar:
 
 ```
 server=1
+uacomment=URSF-110
 
-[mainnet]
+#[mainnet]
 rpcuser=whatever_username_you_want
 rpcpassword=whatever_password_you_want
 rpcport=8332
-uacomment=URSF-110
 
 [regtest]
 rpcuser=whatever_username_you_want
